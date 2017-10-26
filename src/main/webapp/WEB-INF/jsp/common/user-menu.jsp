@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!-- Logo -->
-<h1><a href="../user/home">SM 사업 시스템</a></h1>
+<h1><a href="home">SM 사업 시스템</a></h1>
 
 <!-- Nav -->
 <nav id="nav">

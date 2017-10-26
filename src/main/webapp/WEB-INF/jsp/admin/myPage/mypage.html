@@ -1,0 +1,219 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>SM 사업 시스템</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<script>
+		function z(id) {
+			return document.getElementById(id);
+		}
+
+		function checkEqual(elem) {
+			//z('pwd02').style.fontWeight = 'bold';
+
+			if (z('pwd01').value == elem.value) {
+				z('pwd02').innerHTML = '비밀번호가 일치 합니다';
+				z('pwd02').style.color = 'black';
+				z('submit01').disabled = false;
+			} else {
+				z('pwd02').innerHTML = '비밀번호가 일치하지 않습니다';
+				z('pwd02').style.color = 'black';
+				z('submit01').disabled = true;
+			}
+		}
+
+		function submit01_click() {
+			alert('저장되었습니다');
+		}
+	</script>
+</head>
+
+<body class="left-sidebar">
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<div id="header-wrapper">
+			<div id="header">
+
+				<!-- Logo -->
+				<h1><a href="home.html">SM 사업 시스템</a></h1>
+
+				<!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li>
+							<a href="home.html">Home</a>
+							<ul>
+								<li><a href="notice.html">공지사항</a></li>
+								<li><a href="intro.html">SM 소개</a></li>
+								<li><a href="about.html">시스템 소개</a></li>
+								<li><a href="email.html">메일</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="work-user.html">Work</a>
+							<ul>
+								<li><a href="work-user.html">멘토방 목록</a></li>
+								<li><a href="reportview-admin.html">보고서 관리</a></li>
+								<li><a href="survey.html">설문조사 관리</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="work-user.html">Mento</a>
+							<ul>
+								<li><a href="mento-list.html">멘토 신청자 관리</a></li>
+								<li><a href="period_setting.html">멘토 신청기간 설정</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="all_search.html">People</a>
+							<ul>
+								<li><a href="all_search.html">회원 검색</a></li>
+								<li><a href="management.html">회원 관리</a></li>
+							</ul>
+						</li>
+						<li class="current"><a href="myPage.html">myPage</a></li>
+					</ul>
+				</nav>
+
+			</div>
+		</div>
+
+		<!-- Main -->
+		<div id="main-wrapper">
+			<div class="container">
+
+				<header class="major">
+					<h2>My Page</h2>
+				</header>
+				<div class="row">
+					<div class="4u 12u(mobile)">
+
+						<!-- Sidebar -->
+						<section class="box">
+							<a href="#" class="image featured"><img src="images/pic09.jpg" alt="" /></a>
+							<header>
+								<h3>멘토방</h3>
+							</header>
+							2017, 2학기
+							<footer>
+								<center><a href="work-user.html" class="button alt">멘토방 가기</a></center>
+							</footer>
+						</section>
+						<section class="box">
+							<header>
+								<h3>연결 사이트</h3>
+							</header>
+							<p>클릭하면 해당 페이지로 이동합니다</p>
+							<ul class="divided">
+								<li><a href="http://report.skhu.net/">과제 제출 시스템</a></li>
+								<li><a href="http://www.skhu.ac.kr/main.aspx">성공회 대학교 페이지</a></li>
+								<li><a href="http://sw.skhu.ac.kr/">소프트웨어공학과 홈페이지</a></li>
+								<li><a href="http://cafe.naver.com/skhusoft">소프트웨어공학과 네이버 카페</a></li>
+							</ul>
+						</section>
+
+					</div>
+					<div class="8u 12u(mobile) important(mobile)">
+
+						<!-- Content -->
+						<article class="box post">
+							<form method="post" action="#">
+								<a href="#" class="image"><img src="images/pic01.jpg" alt="" width="200px" height="300px" align="center" /></a>
+								<div class="field">
+									<label class="item item-input">
+										<center>
+											<span class="input-label">사진 업로드</span>
+											<br />
+											<input type="file" fileread="text.file"/>
+										</center>
+									</label>
+								</div>
+
+								<br/>
+								<div class="field">
+									<label>이름 : </label>
+								</div><br/>
+
+								<div class="field">
+									<label>아이디 : </label>
+								</div><br/>
+
+								<div class="field">
+									<label for="password">비밀번호</label>
+									<input type="password" name="changePW" id="pwd01" placeholder="변경할 비밀번호" /><br/>
+									<input type="password" name="comfirmPW" onkeyup="checkEqual(this);" placeholder="비밀번호 확인" /><span id="pwd02"></span>
+								</div><br/>
+
+								<div class="field">
+									<label for="class">담당 학과</label>
+									<select name="department">
+														<option value="소프트웨어공학과" selected(초기 선택된 항목)>소프트웨어공학과</option>
+														<option value="컴퓨터공학과">컴퓨터공학과</option>
+														<option value="정보통신공학과">정보통신공학과</option>
+														<option value="디지털컨텐츠학과">디지털컨텐츠학과</option>
+														<option value="글로컬IT학과">글로컬IT학과</option>
+														<option value="신학과">신학과</option>
+														<option value="영어학과">영어학과</option>
+														<option value="일어일본학과">일어일본학과</option>
+														<option value="중어중국학과">중어중국학과</option>
+														<option value="사회복지학과">사회복지학과</option>
+														<option value="사회과학부">사회과학부</option>
+														<option value="신문방송학과">신문방송학과</option>
+														<option value="경영학부">경영학부</option>
+													</select>
+								</div><br/>
+
+								<div class="field">
+									<label for="email">e-mail</label>
+									<input type="email" name="email" id="email" placeholder="e-mail" />
+								</div><br/>
+
+								<div class="field">
+									<label for="tel">전화번호</label>
+									<input type="text" name="tel" id="tel" placeholder="tel" />
+								</div><br/>
+
+								<center>
+									<button type="button" class="button" id="submit01" onclick="submit01_click()">저장</button>
+								</center>
+							</form>
+						</article>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<div id="footer-wrapper">
+			<section id="footer" class="container">
+				<!-- Copyright -->
+				<div id="copyright">
+					<ul class="links">
+						<li>&copy; 소프트웨어공학과. All rights reserved.</li>
+						<li><a href="http://sw.skhu.ac.kr">sw.skhu.ac.kr</a></li>
+					</ul>
+				</div>
+			</section>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.dropotron.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/skel-viewport.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

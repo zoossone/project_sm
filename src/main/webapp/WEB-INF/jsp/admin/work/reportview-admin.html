@@ -1,0 +1,652 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+<title>SM 사업 시스템</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="assets/css/main.css" />
+
+<style>
+ tbody tr:hover {background-color:#ffe8ee;}
+
+ tbody td:nth-child(2) {cursor:pointer;}
+ tbody td:nth-child(3) {cursor:pointer;}
+ tbody td:nth-child(4) {cursor:pointer;}
+ tbody td:nth-child(5) {cursor:pointer;}
+
+ a:link {text-decoration: none;}
+ .download a { color: white; text-decoration: none;}
+</style>
+
+<script type="text/javascript">
+ function check(){
+   if(document.search.keyWord.value==''){
+		alert('검색어를 입력하세요');
+		document.search.keyWord.focus();
+		return false;
+   }
+ }
+ </script>
+</head>
+
+<body class="no-sidebar">
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<div id="header-wrapper">
+			<div id="header">
+
+				<!-- Logo -->
+				<h1><a href="home.html">SM 사업 시스템</a></h1>
+
+        <!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li>
+							<a href="home.html">Home</a>
+							<ul>
+								<li><a href="notice.html">공지사항</a></li>
+								<li><a href="intro.html">SM 소개</a></li>
+								<li><a href="about.html">시스템 소개</a></li>
+								<li><a href="email.html">메일</a></li>
+							</ul>
+						</li>
+						<li class="current">
+							<a href="work-user.html">Work</a>
+							<ul>
+								<li><a href="work-user.html">멘토방 목록</a></li>
+								<li><a href="reportview-admin.html">보고서 관리</a></li>
+								<li><a href="survey.html">설문조사 관리</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="work-user.html">Mento</a>
+							<ul>
+								<li><a href="mento-list.html">멘토 신청자 관리</a></li>
+								<li><a href="period_setting.html">멘토 신청기간 설정</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="all_search.html">People</a>
+							<ul>
+								<li><a href="all_search.html">회원 검색</a></li>
+								<li><a href="management.html">회원 관리</a></li>
+              </ul>
+						</li>
+						<li><a href="myPage.html">myPage</a></li>
+					</ul>
+				</nav>
+
+			</div>
+		</div>
+
+
+ <!-- Main -->
+ <div id="main-wrapper">
+		<div class="container">
+
+			 <!-- Content -->
+				<header class="major">
+					 <h2>SM 보고서</h2>
+
+
+				</header>
+
+				<article class="box post">
+					<div role="tabpanel">
+
+						<!-- Nav tabs -->
+						<ul class="nav nav-tabs" role="tablist" id="myTab">
+						<li role="presentation" class="active" ><a href="#whole" id="whole-tab" aria-controls="whole" role="tab" data-toggle="tab" aria-expanded="true">전체 보고서</a></li>
+						<li role="presentation" class="" ><a href="#weeks" id="weeks-tab" aria-controls="weeks" role="tab" data-toggle="tab" aria-expanded="false">주차별 보고서</a></li>
+						<li role="presentation" class="" ><a href="#mentors" id="mentors-tab" aria-controls="mentors" role="tab" data-toggle="tab" aria-expanded="false">멘토별 보고서</a></li>
+						<li role="presentation" class="" ><a href="#years" id="years-tab" aria-controls="mentos" role="tab" data-toggle="tab" aria-expanded="false">년도별 보고서</a></li>
+						</ul>
+
+				<!-- Tab panes -->
+				<!--<section>-->
+						<div class="tab-content" id="myTabContent">
+							<div role="tabpanel" class="tab-pane fade active in" id="whole" aria-labelledby="whole-tab">
+								<header>
+								<br/>
+									<h3>전체 보고서</h3>
+									<nav class="navbar navbar-expand-lg navbar-light bg-light">
+										<form class="form-inline my-2 my-lg-0" style="margin: 4px;" name="search" method="get" action="#" onsubmit="return check()">
+											<button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="margin: 1px 2px 3px 4px; float:right">Search</button>
+											<input class="form-control mr-sm-6" type="text" style="margin: 1px 2px 3px 4px; float:right" name="keyWord" placeholder="Search" aria-label="Search">
+										</form>
+									</nav>
+								</header>
+
+                <div class = "download">
+									<a href="view.html" download><button class="btn btn-outline-success my-2 my-sm-0" style="margin: 1px 2px 3px 4px; float:right; background-color:#000000" name="download">ALL</a>
+										<span class="glyphicon glyphicon-download" aria-hidden="true"></span></button>
+									<a href="view.html" download><button class="btn btn-outline-success my-2 my-sm-0" style="margin: 1px 2px 3px 4px; float:right; background-color:#000000" name="download">Selected</a>
+											<span class="glyphicon glyphicon-download" aria-hidden="true"></span></button>
+                </div>
+              <table class="table">
+									<thead>
+										 <tr>
+											 <th>select</th>
+												<th>no.</th>
+												<th>contents</th>
+												<th>writer</th>
+												<th>date</th>
+										 </tr>
+								 	</thead>
+								 	<tbody>
+										<tr>
+											<td><input type="checkbox" name="select" /></td>
+											<td style="cursor:hand;" onclick="location.href='view.html'">1</td>
+											<td style="cursor:hand;" onclick="location.href='view.html'">3주차 보고서</td>
+											<td style="cursor:hand;" onclick="location.href='view.html'">배다슬</td>
+											<td style="cursor:hand;" onclick="location.href='view.html'">17-09-27</td>
+										</tr>
+										<tr>
+											<td><input type="checkbox" name="select" /></td>
+											<td style="cursor:hand;" onclick="location.href='view.html'">2</td>
+											<td style="cursor:hand;" onclick="location.href='view.html'">3주차 보고서</td>
+											<td style="cursor:hand;" onclick="location.href='view.html'">주상원</td>
+											<td style="cursor:hand;" onclick="location.href='view.html'">17-09-27</td>
+										</tr>
+										<tr>
+											<td><input type="checkbox" name="select" /></td>
+											<td style="cursor:hand;" onclick="location.href='view.html'">3</td>
+											<td style="cursor:hand;" onclick="location.href='view.html'">3주차 보고서</td>
+											<td style="cursor:hand;" onclick="location.href='view.html'">국중서</td>
+                      <td style="cursor:hand;" onclick="location.href='view.html'">17-09-27</td>
+										</tr>
+										<tr>
+											<td><input type="checkbox" name="select" /></td>
+											<td style="cursor:hand;" onclick="location.href='view.html'">4</td>
+											<td style="cursor:hand;" onclick="location.href='view.html'">3주차 보고서</td>
+											<td style="cursor:hand;" onclick="location.href='view.html'">박소희</td>
+											<td style="cursor:hand;" onclick="location.href='view.html'">17-09-27</td>
+										</tr>
+										<tr>
+											<td><input type="checkbox" name="select" /></td>
+											<td style="cursor:hand;" onclick="location.href='view.html'">5</td>
+											<td style="cursor:hand;" onclick="location.href='view.html'">3주차 보고서</td>
+											<td style="cursor:hand;" onclick="location.href='view.html'">김보미</td>
+											<td style="cursor:hand;" onclick="location.href='view.html'">17-09-27</td>
+										</tr>
+										<tr>
+											<td><input type="checkbox" name="select" /></td>
+											<td style="cursor:hand;" onclick="location.href='view.html'">6</td>
+											<td style="cursor:hand;" onclick="location.href='view.html'">2주차 보고서</td>
+											<td style="cursor:hand;" onclick="location.href='view.html'">배다슬</td>
+											<td style="cursor:hand;" onclick="location.href='view.html'">17-09-20</td>
+										</tr>
+										<tr>
+											<td><input type="checkbox" name="select" /></td>
+											<td style="cursor:hand;" onclick="location.href='view.html'">7</td>
+											<td style="cursor:hand;" onclick="location.href='view.html'">2주차 보고서</td>
+											<td style="cursor:hand;" onclick="location.href='view.html'">주상원</td>
+											<td style="cursor:hand;" onclick="location.href='view.html'">17-09-20</td>
+										</tr>
+										<tr>
+											<td><input type="checkbox" name="select" /></td>
+											<td style="cursor:hand;" onclick="location.href='view.html'">8</td>
+											<td style="cursor:hand;" onclick="location.href='view.html'">2주차 보고서</td>
+											<td style="cursor:hand;" onclick="location.href='view.html'">국중서</td>
+											<td style="cursor:hand;" onclick="location.href='view.html'">17-09-20</td>
+										</tr>
+										<tr>
+											<td><input type="checkbox" name="select" /></td>
+											<td style="cursor:hand;" onclick="location.href='view.html'">9</td>
+											<td style="cursor:hand;" onclick="location.href='view.html'">2주차 보고서</td>
+											<td style="cursor:hand;" onclick="location.href='view.html'">박소희</td>
+											<td style="cursor:hand;" onclick="location.href='view.html'">17-09-20</td>
+										</tr>
+										<tr>
+											<td><input type="checkbox" name="select" /></td>
+											<td style="cursor:hand;" onclick="location.href='view.html'">10</td>
+											<td style="cursor:hand;" onclick="location.href='view.html'">2주차 보고서</td>
+											<td style="cursor:hand;" onclick="location.href='view.html'">김보미</td>
+											<td style="cursor:hand;" onclick="location.href='view.html'">17-09-20</td>
+										</tr>
+									</tbody>
+								</table>
+
+								<center>
+									<nav>
+										<ul class="pagination">
+											<li>
+												<a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+											</li>
+											 <li><a href="#">1</a></li>
+											 <li><a href="#">2</a></li>
+											 <li><a href="#">3</a></li>
+											 <li><a href="#">4</a></li>
+											 <li><a href="#">5</a></li>
+												<li>
+													<a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+												</li>
+											</ul>
+									 </nav>
+								</center>
+						 </div>
+
+						<div role="tabpanel" class="tab-pane fade" id="weeks" aria-labelledby="weeks-tab">
+							<header>
+							<br/>
+								<h3>주차별 보고서</h3>
+								<nav class="navbar navbar-expand-lg navbar-light bg-light">
+									<form class="form-inline my-2 my-lg-0" style="margin: 4px;" name="search" method="get" action="#" onsubmit="return check()">
+									 <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="margin: 1px 2px 3px 4px; float:right">Search</button>
+									 <input class="form-control mr-sm-6" type="text" style="margin: 1px 2px 3px 4px; float:right" name="keyWord" placeholder="Search" aria-label="Search">
+									</form>
+								 </nav>
+							</header>
+
+							<table class="table">
+								<select name="week" style="margin: 1px 2px 3px 4px">
+													<option value="default" selected(초기 선택된 항목)>선택</option>
+													<option value="1주차">1주차</option>
+													<option value="2주차">2주차</option>
+													<option value="3주차">3주차</option>
+													<option value="4주차">4주차</option>
+													<option value="5주차">5주차</option>
+													<option value="6주차">6주차</option>
+													<option value="7주차">7주차</option>
+													<option value="8주차">8주차</option>
+												</select>
+                        <div class = "download">
+        									<a href="view.html" download><button class="btn btn-outline-success my-2 my-sm-0" style="margin: 1px 2px 3px 4px; float:right; background-color:#000000" name="download">ALL</a>
+        										<span class="glyphicon glyphicon-download" aria-hidden="true"></span></button>
+        									<a href="view.html" download><button class="btn btn-outline-success my-2 my-sm-0" style="margin: 1px 2px 3px 4px; float:right; background-color:#000000" name="download">Selected</a>
+        											<span class="glyphicon glyphicon-download" aria-hidden="true"></span></button>
+                        </div>
+                      <table class="table">
+        									<thead>
+									 <tr>
+										 <th>select</th>
+											<th>no.</th>
+											<th>contents</th>
+											<th>writer</th>
+											<th>date</th>
+									 </tr>
+								</thead>
+                <tbody>
+                  <tr>
+                    <td><input type="checkbox" name="select" /></td>
+                    <td>1</td>
+                    <td style="cursor:hand;" onclick="location.href='view.html'">3주차 보고서</td>
+                    <td>배다슬</td>
+                    <td>17-09-27</td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" name="select" /></td>
+                    <td>2</td>
+                    <td style="cursor:hand;" onclick="location.href='view.html'">3주차 보고서</td>
+                    <td>주상원</td>
+                    <td>17-09-27</td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" name="select" /></td>
+                    <td>3</td>
+                    <td style="cursor:hand;" onclick="location.href='view.html'">3주차 보고서</td>
+                    <td>국중서</td>
+                    <td>17-09-27</td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" name="select" /></td>
+                    <td>4</td>
+                    <td style="cursor:hand;" onclick="location.href='view.html'">3주차 보고서</td>
+                    <td>박소희</td>
+                    <td>17-09-27</td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" name="select" /></td>
+                    <td>5</td>
+                    <td style="cursor:hand;" onclick="location.href='view.html'">3주차 보고서</td>
+                    <td>김보미</td>
+                    <td>17-09-27</td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" name="select" /></td>
+                    <td>6</td>
+                    <td style="cursor:hand;" onclick="location.href='view.html'">2주차 보고서</td>
+                    <td>배다슬</td>
+                    <td>17-09-20</td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" name="select" /></td>
+                    <td>7</td>
+                    <td style="cursor:hand;" onclick="location.href='view.html'">2주차 보고서</td>
+                    <td>주상원</td>
+                    <td>17-09-20</td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" name="select" /></td>
+                    <td>8</td>
+                    <td style="cursor:hand;" onclick="location.href='view.html'">2주차 보고서</td>
+                    <td>국중서</td>
+                    <td>17-09-20</td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" name="select" /></td>
+                    <td>9</td>
+                    <td style="cursor:hand;" onclick="location.href='view.html'">2주차 보고서</td>
+                    <td>박소희</td>
+                    <td>17-09-20</td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" name="select" /></td>
+                    <td>10</td>
+                    <td style="cursor:hand;" onclick="location.href='view.html'">2주차 보고서</td>
+                    <td>김보미</td>
+                    <td>17-09-20</td>
+                  </tr>
+                </tbody>
+							</table>
+
+						 <center>
+							 <nav>
+									<ul class="pagination">
+										 <li>
+												<a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+										 </li>
+										 <li><a href="#">1</a></li>
+										 <li><a href="#">2</a></li>
+										 <li><a href="#">3</a></li>
+										 <li><a href="#">4</a></li>
+										 <li><a href="#">5</a></li>
+										 <li>
+												<a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+										 </li>
+									</ul>
+							 </nav>
+							</center>
+					 </div>
+
+				<div role="tabpanel" class="tab-pane fade" id="mentors" aria-labelledby="mentors-tab">
+					<header>
+						 <br/>
+						 <h3>멘토별 보고서</h3>
+						 <nav class="navbar navbar-expand-lg navbar-light bg-light">
+								<form class="form-inline my-2 my-lg-0" style="margin: 4px;" name="search" method="get" action="#" onsubmit="return check()">
+									 <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="margin: 1px 2px 3px 4px; float:right">Search</button>
+									 <input class="form-control mr-sm-6" type="text" style="margin: 1px 2px 3px 4px; float:right" name="keyWord" placeholder="Search" aria-label="Search">
+								</form>
+						 </nav>
+					</header>
+
+          <div class = "download">
+            <a href="view.html" download><button class="btn btn-outline-success my-2 my-sm-0" style="margin: 1px 2px 3px 4px; float:right; background-color:#000000" name="download">ALL</a>
+              <span class="glyphicon glyphicon-download" aria-hidden="true"></span></button>
+            <a href="view.html" download><button class="btn btn-outline-success my-2 my-sm-0" style="margin: 1px 2px 3px 4px; float:right; background-color:#000000" name="download">Selected</a>
+                <span class="glyphicon glyphicon-download" aria-hidden="true"></span></button>
+          </div>
+        <table class="table">
+            <thead>
+							 <tr>
+								 <th>select</th>
+									<th>no.</th>
+									<th>contents</th>
+									<th>writer</th>
+									<th>date</th>
+							 </tr>
+						</thead>
+            <tbody>
+              <tr>
+                <td><input type="checkbox" name="select" /></td>
+                <td>1</td>
+                <td style="cursor:hand;" onclick="location.href='view.html'">3주차 보고서</td>
+                <td>배다슬</td>
+                <td>17-09-27</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="select" /></td>
+                <td>2</td>
+                <td style="cursor:hand;" onclick="location.href='view.html'">3주차 보고서</td>
+                <td>주상원</td>
+                <td>17-09-27</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="select" /></td>
+                <td>3</td>
+                <td style="cursor:hand;" onclick="location.href='view.html'">3주차 보고서</td>
+                <td>국중서</td>
+                <td>17-09-27</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="select" /></td>
+                <td>4</td>
+                <td style="cursor:hand;" onclick="location.href='view.html'">3주차 보고서</td>
+                <td>박소희</td>
+                <td>17-09-27</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="select" /></td>
+                <td>5</td>
+                <td style="cursor:hand;" onclick="location.href='view.html'">3주차 보고서</td>
+                <td>김보미</td>
+                <td>17-09-27</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="select" /></td>
+                <td>6</td>
+                <td style="cursor:hand;" onclick="location.href='view.html'">2주차 보고서</td>
+                <td>배다슬</td>
+                <td>17-09-20</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="select" /></td>
+                <td>7</td>
+                <td style="cursor:hand;" onclick="location.href='view.html'">2주차 보고서</td>
+                <td>주상원</td>
+                <td>17-09-20</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="select" /></td>
+                <td>8</td>
+                <td style="cursor:hand;" onclick="location.href='view.html'">2주차 보고서</td>
+                <td>국중서</td>
+                <td>17-09-20</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="select" /></td>
+                <td>9</td>
+                <td style="cursor:hand;" onclick="location.href='view.html'">2주차 보고서</td>
+                <td>박소희</td>
+                <td>17-09-20</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="select" /></td>
+                <td>10</td>
+                <td style="cursor:hand;" onclick="location.href='view.html'">2주차 보고서</td>
+                <td>김보미</td>
+                <td>17-09-20</td>
+              </tr>
+            </tbody>
+					</table>
+
+					 <center>
+						 <nav>
+								<ul class="pagination">
+									 <li>
+											<a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+									 </li>
+									 <li><a href="#">1</a></li>
+									 <li><a href="#">2</a></li>
+									 <li><a href="#">3</a></li>
+									 <li><a href="#">4</a></li>
+									 <li><a href="#">5</a></li>
+									 <li>
+											<a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+									 </li>
+								</ul>
+						 </nav>
+					</center>
+			 </div>
+
+			 <div role="tabpanel" class="tab-pane" id="years" aria-labelledby="years-tab">
+					<header>
+						 <br/>
+						 <h3>년도별 보고서</h3>
+						 <nav class="navbar navbar-expand-lg navbar-light bg-light">
+								<form class="form-inline my-2 my-lg-0" style="margin: 4px;" name="search" method="get" action="#" onsubmit="return check()">
+									 <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="margin: 1px 2px 3px 4px; float:right">Search</button>
+									 <input class="form-control mr-sm-6" type="text" style="margin: 1px 2px 3px 4px; float:right" name="keyWord" placeholder="Search" aria-label="Search">
+								</form>
+						 </nav>
+					</header>
+
+					<table class="table">
+						<select name="week" style="margin: 1px 2px 3px 4px; width:200px">
+											<option value="default" selected(초기 선택된 항목)>선택</option>
+											<option value="2017-2학기">2017-2학기</option>
+											<option value="2017-1학기">2017-1학기</option>
+											<option value="2016-2학기">2016-2학기</option>
+											<option value="2016-1학기">2016-1학기</option>
+											<option value="2015-2학기">2015-2학기</option>
+											<option value="2015-1학기">2015-1학기</option>
+										</select>
+                    <div class = "download">
+                      <a href="view.html" download><button class="btn btn-outline-success my-2 my-sm-0" style="margin: 1px 2px 3px 4px; float:right; background-color:#000000" name="download">ALL</a>
+                        <span class="glyphicon glyphicon-download" aria-hidden="true"></span></button>
+                      <a href="view.html" download><button class="btn btn-outline-success my-2 my-sm-0" style="margin: 1px 2px 3px 4px; float:right; background-color:#000000" name="download">Selected</a>
+                          <span class="glyphicon glyphicon-download" aria-hidden="true"></span></button>
+                    </div>
+                    <table class="table">
+                      <thead>
+							 <tr>
+								 <th>select</th>
+									<th>no.</th>
+									<th>contents</th>
+									<th>writer</th>
+									<th>date</th>
+							 </tr>
+						</thead>
+            <tbody>
+              <tr>
+                <td><input type="checkbox" name="select" /></td>
+                <td>1</td>
+                <td style="cursor:hand;" onclick="location.href='view.html'">3주차 보고서</td>
+                <td>배다슬</td>
+                <td>17-09-27</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="select" /></td>
+                <td>2</td>
+                <td style="cursor:hand;" onclick="location.href='view.html'">3주차 보고서</td>
+                <td>주상원</td>
+                <td>17-09-27</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="select" /></td>
+                <td>3</td>
+                <td style="cursor:hand;" onclick="location.href='view.html'">3주차 보고서</td>
+                <td>국중서</td>
+                <td>17-09-27</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="select" /></td>
+                <td>4</td>
+                <td style="cursor:hand;" onclick="location.href='view.html'">3주차 보고서</td>
+                <td>박소희</td>
+                <td>17-09-27</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="select" /></td>
+                <td>5</td>
+                <td style="cursor:hand;" onclick="location.href='view.html'">3주차 보고서</td>
+                <td>김보미</td>
+                <td>17-09-27</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="select" /></td>
+                <td>6</td>
+                <td style="cursor:hand;" onclick="location.href='view.html'">2주차 보고서</td>
+                <td>배다슬</td>
+                <td>17-09-20</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="select" /></td>
+                <td>7</td>
+                <td style="cursor:hand;" onclick="location.href='view.html'">2주차 보고서</td>
+                <td>주상원</td>
+                <td>17-09-20</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="select" /></td>
+                <td>8</td>
+                <td style="cursor:hand;" onclick="location.href='view.html'">2주차 보고서</td>
+                <td>국중서</td>
+                <td>17-09-20</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="select" /></td>
+                <td>9</td>
+                <td style="cursor:hand;" onclick="location.href='view.html'">2주차 보고서</td>
+                <td>박소희</td>
+                <td>17-09-20</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="select" /></td>
+                <td>10</td>
+                <td style="cursor:hand;" onclick="location.href='view.html'">2주차 보고서</td>
+                <td>김보미</td>
+                <td>17-09-20</td>
+              </tr>
+            </tbody>
+					</table>
+
+					 <center>
+						 <nav>
+								<ul class="pagination">
+									 <li>
+											<a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+									 </li>
+									 <li><a href="#">1</a></li>
+									 <li><a href="#">2</a></li>
+									 <li><a href="#">3</a></li>
+									 <li><a href="#">4</a></li>
+									 <li><a href="#">5</a></li>
+									 <li>
+											<a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+									 </li>
+								</ul>
+						 </nav>
+					</center>
+			 </div>
+			</div>
+<!--</section>-->
+</div>
+			 </article>
+
+		</div>
+ </div>
+
+ <!-- Footer -->
+ <div id="footer-wrapper">
+		<section class="container">
+			 <!-- Copyright -->
+			 <div id="copyright">
+					<ul class="links">
+						 <li>&copy; 소프트웨어공학과. All rights reserved.</li>
+						 <li><a href="http://sw.skhu.ac.kr">sw.skhu.ac.kr</a></li>
+					</ul>
+			 </div>
+		</section>
+ </div>
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.dropotron.min.js"></script>
+<script src="assets/js/skel.min.js"></script>
+<script src="assets/js/skel-viewport.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

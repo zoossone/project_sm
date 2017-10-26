@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("/user")
 public class HomeController {
 
     @RequestMapping(value = "home", method = RequestMethod.GET)
@@ -37,5 +36,10 @@ public class HomeController {
     @RequestMapping(value = "view", method = RequestMethod.GET)
     public String noticeView(Model model) {
         return "user/home/notice-view";
+    }
+
+    @RequestMapping(value = "mypage", method = RequestMethod.GET)
+    public String myPage(Model model) {
+        return "user/myPage/mypage";
     }
 }

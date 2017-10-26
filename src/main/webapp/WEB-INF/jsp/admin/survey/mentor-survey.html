@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>SM 사업 시스템</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body class="no-sidebar">
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<div id="header-wrapper">
+			<div id="header">
+
+				<!-- Logo -->
+				<h1><a href="home.html">SM 사업 시스템</a></h1>
+
+				<!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li class="current">
+							<a href="home.html">Home</a>
+							<ul>
+								<li><a href="notice.html">공지사항</a></li>
+								<li><a href="intro.html">SM 소개</a></li>
+								<li><a href="about.html">시스템 소개</a></li>
+								<li><a href="email.html">메일</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="work-user.html">Work</a>
+							<ul>
+								<li><a href="work-user.html">멘토방 목록</a></li>
+								<li><a href="reportview-admin.html">보고서 관리</a></li>
+								<li><a href="survey.html">설문조사 관리</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="work-user.html">Mento</a>
+							<ul>
+								<li><a href="mento-list.html">멘토 신청자 관리</a></li>
+								<li><a href="period_setting.html">멘토 신청기간 설정</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="all_search.html">People</a>
+							<ul>
+								<li><a href="all_search.html">회원 검색</a></li>
+								<li><a href="management.html">회원 관리</a></li>
+							</ul>
+						</li>
+						<li><a href="myPage.html">myPage</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+
+		<!-- Main -->
+		<div id="main-wrapper">
+			<div class="container">
+
+				<!--멘토 설문조사-->
+				<article id="mentor_survey">
+					<a href="#" class="image featured"><img src="images/mentor.png" alt="" /></a>
+					<header>
+						<h2>멘토 설문조사</h2>
+					</header>
+					<form method="post" action="#">
+						<div>
+							-멘티는 정해진 일정에 충실했다.<br>
+							<input type="radio" name="answer" />매우만족
+							<input type="radio" name="answer" />만족&nbsp;
+							<input type="radio" name="answer" />보통&nbsp;
+							<input type="radio" name="answer" />만족하지않음&nbsp;
+							<input type="radio" name="answer" />매우만족하지않음&nbsp;
+							<br><br>
+						</div>
+						<div>
+							-멘티와의 유대감이 향상되었다.<br>
+							<input type="radio" name="answer" />매우만족
+							<input type="radio" name="answer" />만족&nbsp;
+							<input type="radio" name="answer" />보통&nbsp;
+							<input type="radio" name="answer" />만족하지않음&nbsp;
+							<input type="radio" name="answer" />매우만족하지않음&nbsp;
+							<br><br>
+						</div>
+						<div>
+							-멘티를 도와주면서 나의 실력이 단단해졌다.<br>
+							<input type="radio" name="answer" />매우만족
+							<input type="radio" name="answer" />만족&nbsp;
+							<input type="radio" name="answer" />보통&nbsp;
+							<input type="radio" name="answer" />만족하지않음&nbsp;
+							<input type="radio" name="answer" />매우만족하지않음&nbsp;
+							<br><br>
+						</div>
+						<div>
+							-멘티를 도와주면서 나에 대한 자신감이 생겼다.<br>
+							<input type="radio" name="answer" />매우만족
+							<input type="radio" name="answer" />만족&nbsp;
+							<input type="radio" name="answer" />보통&nbsp;
+							<input type="radio" name="answer" />만족하지않음&nbsp;
+							<input type="radio" name="answer" />매우만족하지않음&nbsp;
+							<br><br>
+						</div>
+						<div>
+							-선후배와 동기에게 SM사업에 멘토로 참여하라고 추천하고 싶다.<br>
+							<input type="radio" name="answer" />매우만족
+							<input type="radio" name="answer" />만족&nbsp;
+							<input type="radio" name="answer" />보통&nbsp;
+							<input type="radio" name="answer" />만족하지않음&nbsp;
+							<input type="radio" name="answer" />매우만족하지않음&nbsp;
+							<br><br>
+						</div>
+						<div>
+							-SM 사업에 만족한다.<br>
+							<input type="radio" name="answer" />매우만족
+							<input type="radio" name="answer" />만족&nbsp;
+							<input type="radio" name="answer" />보통&nbsp;
+							<input type="radio" name="answer" />만족하지않음&nbsp;
+							<input type="radio" name="answer" />매우만족하지않음&nbsp;
+							<br><br>
+						</div>
+
+						<center>
+							<a href="mentor_survey_change.html" class="button">수정</a>
+							<a href="survey.html" class="button alt">목록으로</a>
+						</center>
+						<br/>
+					</form>
+				</article>
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<div id="footer-wrapper">
+			<section id="footer" class="container">
+				<!-- Copyright -->
+				<div id="copyright">
+					<ul class="links">
+						<li>&copy; 소프트웨어공학과. All rights reserved.</li>
+						<li><a href="http://sw.skhu.ac.kr">sw.skhu.ac.kr</a></li>
+					</ul>
+				</div>
+			</section>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.dropotron.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/skel-viewport.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

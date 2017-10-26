@@ -22,7 +22,7 @@
 			<div id="header">
 
 				<!-- Menu -->
-				<c:import url="../../common/menu.jsp" />
+				<c:import url="../../common/user-menu.jsp" />
 
 
 			</div>

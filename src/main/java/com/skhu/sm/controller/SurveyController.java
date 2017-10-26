@@ -9,7 +9,6 @@ import org.springframework.ui.Model;
  * Created by ds on 2017-10-26.
  */
 @Controller
-@RequestMapping("/user")
 public class SurveyController {
 
     @RequestMapping(value = "survey", method = RequestMethod.GET)

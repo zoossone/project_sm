@@ -1,0 +1,460 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<title>SM 사업 시스템</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<style>
+			.form-control{ margin:	5px	}
+	</style>
+	<script>
+	function submit01_click() {
+		alert('신청기간이 변경되었습니다.');
+	}
+	</script>
+</head>
+
+<body class="no-sidebar">
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<div id="header-wrapper">
+			<div id="header">
+
+				<!-- Logo -->
+				<h1><a href="home.html">SM 사업 시스템</a></h1>
+
+				<!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li>
+							<a href="home.html">Home</a>
+							<ul>
+								<li><a href="notice.html">공지사항</a></li>
+								<li><a href="intro.html">SM 소개</a></li>
+								<li><a href="about.html">시스템 소개</a></li>
+								<li><a href="email.html">메일</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="work-user.html">Work</a>
+							<ul>
+								<li><a href="work-user.html">멘토방 목록</a></li>
+								<li><a href="reportview-admin.html">보고서 관리</a></li>
+								<li><a href="survey.html">설문조사 관리</a></li>
+							</ul>
+						</li>
+						<li class="current">
+							<a href="work-user.html">Mento</a>
+							<ul>
+								<li><a href="mento-list.html">멘토 신청자 관리</a></li>
+								<li><a href="period_setting.html">멘토 신청기간 설정</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="all_search.html">People</a>
+							<ul>
+								<li><a href="all_search.html">회원 검색</a></li>
+								<li><a href="management.html">회원 관리</a></li>
+							</ul>
+						</li>
+						<li><a href="myPage.html">myPage</a></li>
+					</ul>
+				</nav>
+
+			</div>
+		</div>
+
+		<!-- Main -->
+		<div id="main-wrapper">
+			<div class="container">
+
+				<!-- Content -->
+				<article class="box post">
+					<header>
+						<h2>신청 기간 설정</h2>
+						<br />
+
+					</header>
+
+					<table class="table table-bordered table-hover">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>시작 날짜</th>
+								<th>종료 날짜</th>
+								<th>설정</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>멘토 신청 기간</td>
+								<td>
+									<select class="form-control">
+										<option>1월</option>
+  									<option>2월</option>
+  									<option>3월</option>
+  									<option>4월</option>
+  									<option>5월</option>
+										<option>6월</option>
+  									<option>7월</option>
+  									<option>8월</option>
+  									<option>9월</option>
+  									<option>10월</option>
+										<option>11월</option>
+  									<option>12월</option>
+									</select>
+									<select class="form-control">
+										<option>1일</option>
+  									<option>2일</option>
+  									<option>3일</option>
+  									<option>4일</option>
+  									<option>5일</option>
+										<option>6일</option>
+  									<option>7일</option>
+  									<option>8일</option>
+  									<option>9일</option>
+  									<option>10일</option>
+										<option>11일</option>
+  									<option>12일</option>
+  									<option>13일</option>
+  									<option>14일</option>
+  									<option>15일</option>
+										<option>16일</option>
+  									<option>17일</option>
+  									<option>18일</option>
+  									<option>19일</option>
+  									<option>20일</option>
+										<option>21일</option>
+  									<option>22일</option>
+  									<option>23일</option>
+  									<option>24일</option>
+  									<option>25일</option>
+										<option>26일</option>
+  									<option>27일</option>
+  									<option>28일</option>
+  									<option>29일</option>
+  									<option>30일</option>
+										<option>31일</option>
+									</select>
+								</td>
+								<td>
+									<select class="form-control">
+										<option>1월</option>
+  									<option>2월</option>
+  									<option>3월</option>
+  									<option>4월</option>
+  									<option>5월</option>
+										<option>6월</option>
+  									<option>7월</option>
+  									<option>8월</option>
+  									<option>9월</option>
+  									<option>10월</option>
+										<option>11월</option>
+  									<option>12월</option>
+									</select>
+									<select class="form-control">
+										<option>1일</option>
+  									<option>2일</option>
+  									<option>3일</option>
+  									<option>4일</option>
+  									<option>5일</option>
+										<option>6일</option>
+  									<option>7일</option>
+  									<option>8일</option>
+  									<option>9일</option>
+  									<option>10일</option>
+										<option>11일</option>
+  									<option>12일</option>
+  									<option>13일</option>
+  									<option>14일</option>
+  									<option>15일</option>
+										<option>16일</option>
+  									<option>17일</option>
+  									<option>18일</option>
+  									<option>19일</option>
+  									<option>20일</option>
+										<option>21일</option>
+  									<option>22일</option>
+  									<option>23일</option>
+  									<option>24일</option>
+  									<option>25일</option>
+										<option>26일</option>
+  									<option>27일</option>
+  									<option>28일</option>
+  									<option>29일</option>
+  									<option>30일</option>
+										<option>31일</option>
+									</select>
+								</td>
+								<td>
+									<label class="radio-inline">
+  									<input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 활성화
+									</label>
+									<label class="radio-inline">
+  									<input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" checked> 비활성화
+									</label>
+								</td>
+							</tr>
+							<tr>
+								<td>멘티 신청 기간</td>
+								<td>
+									<select class="form-control">
+										<option>1월</option>
+  									<option>2월</option>
+  									<option>3월</option>
+  									<option>4월</option>
+  									<option>5월</option>
+										<option>6월</option>
+  									<option>7월</option>
+  									<option>8월</option>
+  									<option>9월</option>
+  									<option>10월</option>
+										<option>11월</option>
+  									<option>12월</option>
+									</select>
+									<select class="form-control">
+										<option>1일</option>
+  									<option>2일</option>
+  									<option>3일</option>
+  									<option>4일</option>
+  									<option>5일</option>
+										<option>6일</option>
+  									<option>7일</option>
+  									<option>8일</option>
+  									<option>9일</option>
+  									<option>10일</option>
+										<option>11일</option>
+  									<option>12일</option>
+  									<option>13일</option>
+  									<option>14일</option>
+  									<option>15일</option>
+										<option>16일</option>
+  									<option>17일</option>
+  									<option>18일</option>
+  									<option>19일</option>
+  									<option>20일</option>
+										<option>21일</option>
+  									<option>22일</option>
+  									<option>23일</option>
+  									<option>24일</option>
+  									<option>25일</option>
+										<option>26일</option>
+  									<option>27일</option>
+  									<option>28일</option>
+  									<option>29일</option>
+  									<option>30일</option>
+										<option>31일</option>
+									</select>
+								</td>
+								<td>
+									<select class="form-control">
+										<option>1월</option>
+  									<option>2월</option>
+  									<option>3월</option>
+  									<option>4월</option>
+  									<option>5월</option>
+										<option>6월</option>
+  									<option>7월</option>
+  									<option>8월</option>
+  									<option>9월</option>
+  									<option>10월</option>
+										<option>11월</option>
+  									<option>12월</option>
+									</select>
+									<select class="form-control">
+										<option>1일</option>
+  									<option>2일</option>
+  									<option>3일</option>
+  									<option>4일</option>
+  									<option>5일</option>
+										<option>6일</option>
+  									<option>7일</option>
+  									<option>8일</option>
+  									<option>9일</option>
+  									<option>10일</option>
+										<option>11일</option>
+  									<option>12일</option>
+  									<option>13일</option>
+  									<option>14일</option>
+  									<option>15일</option>
+										<option>16일</option>
+  									<option>17일</option>
+  									<option>18일</option>
+  									<option>19일</option>
+  									<option>20일</option>
+										<option>21일</option>
+  									<option>22일</option>
+  									<option>23일</option>
+  									<option>24일</option>
+  									<option>25일</option>
+										<option>26일</option>
+  									<option>27일</option>
+  									<option>28일</option>
+  									<option>29일</option>
+  									<option>30일</option>
+										<option>31일</option>
+									</select>
+								</td>
+								<td>
+									<label class="radio-inline">
+									  <input type="radio" name="inlineRadioOptions1" id="inlineRadio3" value="option3"> 활성화
+									</label>
+									<label class="radio-inline">
+									  <input type="radio" name="inlineRadioOptions1" id="inlineRadio4" value="option4" checked> 비활성화
+									</label>
+								</td>
+							</tr>
+							<tr>
+								<td>설문 조사 기간</td>
+								<td>
+									<select class="form-control">
+										<option>1월</option>
+  									<option>2월</option>
+  									<option>3월</option>
+  									<option>4월</option>
+  									<option>5월</option>
+										<option>6월</option>
+  									<option>7월</option>
+  									<option>8월</option>
+  									<option>9월</option>
+  									<option>10월</option>
+										<option>11월</option>
+  									<option>12월</option>
+									</select>
+									<select class="form-control">
+										<option>1일</option>
+  									<option>2일</option>
+  									<option>3일</option>
+  									<option>4일</option>
+  									<option>5일</option>
+										<option>6일</option>
+  									<option>7일</option>
+  									<option>8일</option>
+  									<option>9일</option>
+  									<option>10일</option>
+										<option>11일</option>
+  									<option>12일</option>
+  									<option>13일</option>
+  									<option>14일</option>
+  									<option>15일</option>
+										<option>16일</option>
+  									<option>17일</option>
+  									<option>18일</option>
+  									<option>19일</option>
+  									<option>20일</option>
+										<option>21일</option>
+  									<option>22일</option>
+  									<option>23일</option>
+  									<option>24일</option>
+  									<option>25일</option>
+										<option>26일</option>
+  									<option>27일</option>
+  									<option>28일</option>
+  									<option>29일</option>
+  									<option>30일</option>
+										<option>31일</option>
+									</select>
+								</td>
+								<td>
+									<select class="form-control">
+										<option>1월</option>
+  									<option>2월</option>
+  									<option>3월</option>
+  									<option>4월</option>
+  									<option>5월</option>
+										<option>6월</option>
+  									<option>7월</option>
+  									<option>8월</option>
+  									<option>9월</option>
+  									<option>10월</option>
+										<option>11월</option>
+  									<option>12월</option>
+									</select>
+									<select class="form-control">
+										<option>1일</option>
+  									<option>2일</option>
+  									<option>3일</option>
+  									<option>4일</option>
+  									<option>5일</option>
+										<option>6일</option>
+  									<option>7일</option>
+  									<option>8일</option>
+  									<option>9일</option>
+  									<option>10일</option>
+										<option>11일</option>
+  									<option>12일</option>
+  									<option>13일</option>
+  									<option>14일</option>
+  									<option>15일</option>
+										<option>16일</option>
+  									<option>17일</option>
+  									<option>18일</option>
+  									<option>19일</option>
+  									<option>20일</option>
+										<option>21일</option>
+  									<option>22일</option>
+  									<option>23일</option>
+  									<option>24일</option>
+  									<option>25일</option>
+										<option>26일</option>
+  									<option>27일</option>
+  									<option>28일</option>
+  									<option>29일</option>
+  									<option>30일</option>
+										<option>31일</option>
+									</select>
+								</td>
+								<td>
+									<label class="radio-inline">
+									  <input type="radio" name="inlineRadioOptions2" id="inlineRadio5" value="option5"> 활성화
+									</label>
+									<label class="radio-inline">
+									  <input type="radio" name="inlineRadioOptions2" id="inlineRadio6" value="option6" checked> 비활성화
+									</label>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<center>
+						<button type="button" class="button" id="submit01" onclick="submit01_click()">저장</button>
+					</center>
+
+				</article>
+
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<div id="footer-wrapper">
+			<section id="footer" class="container">
+				<!-- Copyright -->
+				<div id="copyright">
+					<ul class="links">
+						<li>&copy; 소프트웨어공학과. All rights reserved.</li>
+						<li><a href="http://sw.skhu.ac.kr">sw.skhu.ac.kr</a></li>
+					</ul>
+				</div>
+			</section>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.dropotron.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/skel-viewport.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

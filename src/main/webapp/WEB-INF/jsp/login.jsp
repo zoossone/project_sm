@@ -33,7 +33,7 @@
             }
         }*/// 아이디 패스워드 입력 안했으면 로그인 안되게 막고 싶었는데 안먹어요ㅜㅜ
     function locationHref() {
-        location.href = "user/home";
+        location.href = "home";
     }
 </script>
 
@@ -49,15 +49,16 @@
         <div class="content">
             <div class="inner">
                 <h1>SM System</h1>
-                <div>
+                <form method="post" action="/sm">
                     <label>
-                        <input type="text" placeholder="Id" name = "id">
+                        <input type="text" class="form-control" placeholder="Id" name = "id">
                     </label>
                     <label>
-                        <input type="password" placeholder="Password" name = "password">
+                        <input type="password" class="form-control" placeholder="Password" name = "password">
                     </label>
-                </div>
-                <button onclick="locationHref()" type = "submit">Login</button>
+                    <button type = "submit">Login</button>
+                </form>
+                <button onclick="locationHref()" type = "submit">임시 Login</button>
             </div>
         </div>
         <nav>

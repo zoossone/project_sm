@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * Created by ds on 2017-10-26.
  */
 @Controller
-@RequestMapping("/user")
 public class MentoringController {
 
     @RequestMapping(value = "mymentoring", method = RequestMethod.GET)
