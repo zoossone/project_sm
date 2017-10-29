@@ -9,12 +9,12 @@ import lombok.Data;
 public class Board implements Serializable{
 	private  static final long serialVersionUID = 1L;
 
-	int b_id;
-	String b_title;
-	int b_writter;
-	String b_contents;
-	String b_file;
-	Date b_date;
-	int m_id;
+	private int b_id;
+	private String b_title;
+	private int b_writter;
+	private String b_contents;
+	private String b_file;
+	private Date b_date;
+	private int m_id;
 
 }

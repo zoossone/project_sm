@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+                "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.skhu.sm.mapper.UserMapper">
-    <cache flushInterval="10000"/>
+<cache flushInterval="10000"/>
 
-    <select id="findOne" resultType="User">
-        SELECT * FROM USERS WHERE u_id =
-        #{id}
+<select id="findOne" resultType="User">
+    SELECT * FROM USERS WHERE u_id =
+    #{u_id}
+</select>
+
+<select id="login" resultType="User">
+    SELECT * FROM USERS WHERE u_id =
+    #{u_id} and u_password = #{u_password}
 </select>
 
 </mapper>

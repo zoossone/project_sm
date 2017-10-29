@@ -42,4 +42,9 @@ public class HomeController {
     public String myPage(Model model) {
         return "user/myPage/mypage";
     }
+
+    @RequestMapping(value = "admin", method = RequestMethod.GET)
+    public String admin(Model model) {
+        return "admin/home/home";
+    }
 }

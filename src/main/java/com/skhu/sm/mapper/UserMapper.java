@@ -8,5 +8,6 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface UserMapper {
-    User findOne(String id);
+    User findOne(String u_id);
+    User login(String u_id, String u_password);
 }

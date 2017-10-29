@@ -49,16 +49,21 @@
         <div class="content">
             <div class="inner">
                 <h1>SM System</h1>
-                <form method="post" action="/sm">
+
+                <p><c:if test="${loginError}">아이디/비밀번호가 잘못되었습니다.</c:if></p>
+
+                <form method="post" action="/">
                     <label>
-                        <input type="text" class="form-control" placeholder="Id" name = "id">
+                        <input type="text" class="form-control" placeholder="id" name="u_id" autofocus="autofocus">
                     </label>
                     <label>
-                        <input type="password" class="form-control" placeholder="Password" name = "password">
+                        <input type="password" class="form-control" placeholder="password" name="u_password">
                     </label>
-                    <button type = "submit">Login</button>
+                    <button type="submit">Login</button>
                 </form>
-                <button onclick="locationHref()" type = "submit">임시 Login</button>
+
+                <button onclick="locationHref()" type="submit">임시 Login</button>
+
             </div>
         </div>
         <nav>
@@ -178,7 +183,7 @@
                 <br/> <br/>
                 <p>*초기 비밀번호는 s학번 입니다</p>
             </form>
-            <a href="home/admin">관리자 페이지</a>
+            <a href="admin">관리자 페이지</a>
         </article>
 
     </div>

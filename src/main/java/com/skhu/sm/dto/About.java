@@ -8,9 +8,9 @@ import lombok.Data;
 public class About implements Serializable {
     private  static final long serialVersionUID = 1L;
 
-    int a_id;
-    String a_title;
-    String a_contents;
-    String a_images;
+    private int a_id;
+    private String a_title;
+    private String a_contents;
+    private String a_images;
 
 }
