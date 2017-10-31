@@ -16,15 +16,15 @@ public class LoginController {
     @Autowired
     UserMapper userMapper;
 
-    @GetMapping(value = {"", "/login"})
+    @RequestMapping(value = {"", "/login"})
     public String login(Model model) {
         model.addAttribute("loginError", false);
         return "login";
     }
 
-    @PostMapping(value = {"", "/login"})
-    public String login(Model model, @RequestParam("u_id") String u_id, @RequestParam("u_password") String u_password) {
-        System.out.println("u_id : " + u_id + " u_password : " + u_password);
+    /*@PostMapping(value = {"", "/login"})
+    public String login(Model model, @RequestParam("id") String u_id, @RequestParam("password") String u_password) {
+        *//*System.out.println("u_id : " + u_id + " u_password : " + u_password);
         if(u_id.isEmpty() || u_password.isEmpty()) {
             return "redirect:/login-error";
         }
@@ -36,8 +36,10 @@ public class LoginController {
         }else {
             System.out.println("LOGIN FAILED");
             return "redirect:/login-error";
-        }
-    }
+        }*//*
+        System.out.println("login post");
+        return "login";
+    }*/
 
     @GetMapping(value = "login-error")
     public String loginError(Model model) {

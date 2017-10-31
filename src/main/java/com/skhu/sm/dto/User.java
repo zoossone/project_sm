@@ -21,4 +21,6 @@ public class User implements Serializable {
     private int u_grade;
     private String u_photo;
     private int m_id;
+
+
 }

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <!DOCTYPE HTML>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
@@ -52,17 +52,15 @@
 
                 <p><c:if test="${loginError}">아이디/비밀번호가 잘못되었습니다.</c:if></p>
 
-                <form method="post" action="/">
+                <form method="post" action="/login-processing">
                     <label>
-                        <input type="text" class="form-control" placeholder="id" name="u_id" autofocus="autofocus">
+                        <input type="text" class="form-control" placeholder="id" name="id" autofocus="autofocus">
                     </label>
                     <label>
-                        <input type="password" class="form-control" placeholder="password" name="u_password">
+                        <input type="password" class="form-control" placeholder="password" name="password">
                     </label>
                     <button type="submit">Login</button>
                 </form>
-
-                <button onclick="locationHref()" type="submit">임시 Login</button>
 
             </div>
         </div>

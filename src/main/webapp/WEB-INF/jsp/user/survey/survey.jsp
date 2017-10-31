@@ -38,7 +38,7 @@ pageEncoding="UTF-8" %>
 									</header>
 									<p>한 학기 동안 멘토링 활동에 대한 설문조사입니다.</p>
 									<footer>
-										<a href="mentosurvey" class="button alt">멘토 설문조사 바로가기</a>
+										<a href="mentorsurvey" class="button alt">멘토 설문조사 바로가기</a>
 									</footer>
 								</section>
 							</div>
