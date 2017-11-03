@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <!DOCTYPE HTML>
 <html>
 <!-- Head -->
@@ -44,7 +45,7 @@
         <div id="header">
 
             <!-- Menu -->
-            <c:import url="../../common/user-menu.jsp"/>
+            <c:import url="../../common/menu.jsp"/>
 
         </div>
     </div>
@@ -89,7 +90,8 @@
                     <!-- Content -->
                     <article class="box post">
                         <form method="post" action="#">
-                            <a href="#" class="image"><img src="../../../res/images/pic01.jpg" alt="" width="200px" height="300px"
+                            <a href="#" class="image"><img src="../../../res/images/pic01.jpg" alt="" width="200px"
+                                                           height="300px"
                                                            align="center"/></a>
                             <div class="field">
                                 <label class="item item-input">
@@ -123,77 +125,100 @@
                                        placeholder="비밀번호 확인"/><span id="pwd02"></span>
                             </div>
                             <br/>
+                            <sec:authorize access="hasRole('ROLE_USER')">
+                                <div class="field">
+                                    <label for="class">학과</label>
+                                    <select name="department">
+                                        <option value="소프트웨어공학과" selected(초기 선택된 항목)>소프트웨어공학과</option>
+                                        <option value="컴퓨터공학과">컴퓨터공학과</option>
+                                        <option value="정보통신공학과">정보통신공학과</option>
+                                        <option value="디지털컨텐츠학과">디지털컨텐츠학과</option>
+                                        <option value="글로컬IT학과">글로컬IT학과</option>
+                                        <option value="신학과">신학과</option>
+                                        <option value="영어학과">영어학과</option>
+                                        <option value="일어일본학과">일어일본학과</option>
+                                        <option value="중어중국학과">중어중국학과</option>
+                                        <option value="사회복지학과">사회복지학과</option>
+                                        <option value="사회과학부">사회과학부</option>
+                                        <option value="신문방송학과">신문방송학과</option>
+                                        <option value="경영학부">경영학부</option>
+                                    </select>
+                                </div>
+                                <br/>
 
-                            <div class="field">
-                                <label for="class">학과</label>
-                                <select name="department">
-                                    <option value="소프트웨어공학과" selected(초기 선택된 항목)>소프트웨어공학과</option>
-                                    <option value="컴퓨터공학과">컴퓨터공학과</option>
-                                    <option value="정보통신공학과">정보통신공학과</option>
-                                    <option value="디지털컨텐츠학과">디지털컨텐츠학과</option>
-                                    <option value="글로컬IT학과">글로컬IT학과</option>
-                                    <option value="신학과">신학과</option>
-                                    <option value="영어학과">영어학과</option>
-                                    <option value="일어일본학과">일어일본학과</option>
-                                    <option value="중어중국학과">중어중국학과</option>
-                                    <option value="사회복지학과">사회복지학과</option>
-                                    <option value="사회과학부">사회과학부</option>
-                                    <option value="신문방송학과">신문방송학과</option>
-                                    <option value="경영학부">경영학부</option>
-                                </select>
-                            </div>
-                            <br/>
+                                <div class="field">
+                                    <label for="class">복수전공</label>
+                                    <select name="department">
+                                        <option value="없음" selected(초기 선택된 항목)>없음</option>
+                                        <option value="소프트웨어공학과"></option>
+                                        <option value="컴퓨터공학과">컴퓨터공학과</option>
+                                        <option value="정보통신공학과">정보통신공학과</option>
+                                        <option value="디지털컨텐츠학과">디지털컨텐츠학과</option>
+                                        <option value="글로컬IT학과">글로컬IT학과</option>
+                                        <option value="신학과">신학과</option>
+                                        <option value="영어학과">영어학과</option>
+                                        <option value="일어일본학과">일어일본학과</option>
+                                        <option value="중어중국학과">중어중국학과</option>
+                                        <option value="사회복지학과">사회복지학과</option>
+                                        <option value="사회과학부">사회과학부</option>
+                                        <option value="신문방송학과">신문방송학과</option>
+                                        <option value="경영학부">경영학부</option>
+                                    </select>
+                                </div>
+                                <br/>
 
-                            <div class="field">
-                                <label for="class">복수전공</label>
-                                <select name="department">
-                                    <option value="없음" selected(초기 선택된 항목)>없음</option>
-                                    <option value="소프트웨어공학과"></option>
-                                    <option value="컴퓨터공학과">컴퓨터공학과</option>
-                                    <option value="정보통신공학과">정보통신공학과</option>
-                                    <option value="디지털컨텐츠학과">디지털컨텐츠학과</option>
-                                    <option value="글로컬IT학과">글로컬IT학과</option>
-                                    <option value="신학과">신학과</option>
-                                    <option value="영어학과">영어학과</option>
-                                    <option value="일어일본학과">일어일본학과</option>
-                                    <option value="중어중국학과">중어중국학과</option>
-                                    <option value="사회복지학과">사회복지학과</option>
-                                    <option value="사회과학부">사회과학부</option>
-                                    <option value="신문방송학과">신문방송학과</option>
-                                    <option value="경영학부">경영학부</option>
-                                </select>
-                            </div>
-                            <br/>
+                                <div class="field">
+                                    <label for="class">부전공</label>
+                                    <select name="department">
+                                        <option value="없음" selected(초기 선택된 항목)>없음</option>
+                                        <option value="소프트웨어공학과"></option>
+                                        <option value="컴퓨터공학과">컴퓨터공학과</option>
+                                        <option value="정보통신공학과">정보통신공학과</option>
+                                        <option value="디지털컨텐츠학과">디지털컨텐츠학과</option>
+                                        <option value="글로컬IT학과">글로컬IT학과</option>
+                                        <option value="신학과">신학과</option>
+                                        <option value="영어학과">영어학과</option>
+                                        <option value="일어일본학과">일어일본학과</option>
+                                        <option value="중어중국학과">중어중국학과</option>
+                                        <option value="사회복지학과">사회복지학과</option>
+                                        <option value="사회과학부">사회과학부</option>
+                                        <option value="신문방송학과">신문방송학과</option>
+                                        <option value="경영학부">경영학부</option>
+                                    </select>
+                                </div>
+                                <br/>
 
-                            <div class="field">
-                                <label for="class">부전공</label>
-                                <select name="department">
-                                    <option value="없음" selected(초기 선택된 항목)>없음</option>
-                                    <option value="소프트웨어공학과"></option>
-                                    <option value="컴퓨터공학과">컴퓨터공학과</option>
-                                    <option value="정보통신공학과">정보통신공학과</option>
-                                    <option value="디지털컨텐츠학과">디지털컨텐츠학과</option>
-                                    <option value="글로컬IT학과">글로컬IT학과</option>
-                                    <option value="신학과">신학과</option>
-                                    <option value="영어학과">영어학과</option>
-                                    <option value="일어일본학과">일어일본학과</option>
-                                    <option value="중어중국학과">중어중국학과</option>
-                                    <option value="사회복지학과">사회복지학과</option>
-                                    <option value="사회과학부">사회과학부</option>
-                                    <option value="신문방송학과">신문방송학과</option>
-                                    <option value="경영학부">경영학부</option>
-                                </select>
-                            </div>
-                            <br/>
+                                <div class="field">
+                                    <label for="grade">학년</label>
+                                    <input type="radio" name="grade" value="1학년" id="grade1"/>1학년&nbsp;&nbsp;
+                                    <input type="radio" name="grade" value="2학년" id="grade2"/>2학년&nbsp;&nbsp;
+                                    <input type="radio" name="grade" value="3학년" id="grade3"/>3학년&nbsp;&nbsp;
+                                    <input type="radio" name="grade" value="4학년" id="grade4"/>4학년&nbsp;&nbsp;
+                                </div>
+                                <br/>
+                            </sec:authorize>
+                            <sec:authorize access="hasRole('ROLE_ADMIN')">
+                                <div class="field">
+                                    <label for="class">담당 학과</label>
+                                    <select name="department">
+                                        <option value="소프트웨어공학과" selected(초기 선택된 항목)>소프트웨어공학과</option>
+                                        <option value="컴퓨터공학과">컴퓨터공학과</option>
+                                        <option value="정보통신공학과">정보통신공학과</option>
+                                        <option value="디지털컨텐츠학과">디지털컨텐츠학과</option>
+                                        <option value="글로컬IT학과">글로컬IT학과</option>
+                                        <option value="신학과">신학과</option>
+                                        <option value="영어학과">영어학과</option>
+                                        <option value="일어일본학과">일어일본학과</option>
+                                        <option value="중어중국학과">중어중국학과</option>
+                                        <option value="사회복지학과">사회복지학과</option>
+                                        <option value="사회과학부">사회과학부</option>
+                                        <option value="신문방송학과">신문방송학과</option>
+                                        <option value="경영학부">경영학부</option>
+                                    </select>
+                                </div>
+                                <br/>
+                            </sec:authorize>
 
-                            <div class="field">
-                                <label for="grade">학년</label>
-                                <input type="radio" name="grade" value="1학년" id="grade1"/>1학년&nbsp;&nbsp;
-                                <input type="radio" name="grade" value="2학년" id="grade2"/>2학년&nbsp;&nbsp;
-                                <input type="radio" name="grade" value="3학년" id="grade3"/>3학년&nbsp;&nbsp;
-                                <input type="radio" name="grade" value="4학년" id="grade4"/>4학년&nbsp;&nbsp;
-                            </div>
-                            <br/>
 
                             <div class="field">
                                 <label for="email">e-mail</label>

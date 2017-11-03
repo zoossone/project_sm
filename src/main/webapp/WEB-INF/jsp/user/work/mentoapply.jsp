@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <!DOCTYPE HTML>
 <html>
 
@@ -15,7 +16,7 @@ pageEncoding="UTF-8" %>
 			<div id="header">
 
 				<!-- Menu -->
-				<c:import url="../../common/user-menu.jsp" />
+				<c:import url="../../common/menu.jsp" />
 
 			</div>
 		</div>
@@ -32,7 +33,7 @@ pageEncoding="UTF-8" %>
 					<article id="mento">
 						<form method="post" action="#">
 							<div class="row">
-								<div class="col-xs-6" style="left">
+								<div class="col-xs-6" style="left: auto">
 								<label for="demo-subject">스터디 주제</label>
 									<select name="department">
 														<option value="주제 선택" selected(초기 선택된 항목)>주제 선택</option>

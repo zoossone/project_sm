@@ -1,31 +1,29 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
+
 <!DOCTYPE HTML>
 <html>
 
-<head>
-	<title>SM 사업 시스템</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="assets/css/main.css" />
+<script type="text/javascript">
+    <!--
+    function add_item(){
+        // pre_set 에 있는 내용을 읽어와서 처리..
+        var div = document.createElement('div');
+        div.innerHTML = document.getElementById('pre_set').innerHTML;
+        document.getElementById('field').appendChild(div);
+    }
 
-	<script type="text/javascript">
-<!--
-		function add_item(){
-				// pre_set 에 있는 내용을 읽어와서 처리..
-				var div = document.createElement('div');
-				div.innerHTML = document.getElementById('pre_set').innerHTML;
-				document.getElementById('field').appendChild(div);
-		}
-
-		function remove_item(obj){
-				// obj.parentNode 를 이용하여 삭제
-				document.getElementById('field').removeChild(obj.parentNode);
-		}
-//-->
+    function remove_item(obj){
+        // obj.parentNode 를 이용하여 삭제
+        document.getElementById('field').removeChild(obj.parentNode);
+    }
+    //-->
 </script>
-</head>
+
+<!-- Head -->
+<c:import url="../../common/head.jsp"/>
 
 <body class="no-sidebar">
 	<div id="page-wrapper">
@@ -34,46 +32,8 @@
 		<div id="header-wrapper">
 			<div id="header">
 
-				<!-- Logo -->
-				<h1><a href="home.html">SM 사업 시스템</a></h1>
-
-				<!-- Nav -->
-				<nav id="nav">
-					<ul>
-						<li class="current">
-							<a href="home.html">Home</a>
-							<ul>
-								<li><a href="notice.html">공지사항</a></li>
-								<li><a href="intro.html">SM 소개</a></li>
-								<li><a href="about.html">시스템 소개</a></li>
-								<li><a href="email.html">메일</a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="work-user.html">Work</a>
-							<ul>
-								<li><a href="work-user.html">멘토방 목록</a></li>
-								<li><a href="reportview-admin.html">보고서 관리</a></li>
-								<li><a href="survey.html">설문조사 관리</a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="work-user.html">Mento</a>
-							<ul>
-								<li><a href="mento-list.html">멘토 신청자 관리</a></li>
-								<li><a href="period_setting.html">멘토 신청기간 설정</a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="all_search.html">People</a>
-							<ul>
-								<li><a href="all_search.html">회원 검색</a></li>
-								<li><a href="management.html">회원 관리</a></li>
-							</ul>
-						</li>
-						<li><a href="myPage.html">myPage</a></li>
-					</ul>
-				</nav>
+				<!-- Menu -->
+				<c:import url="../../common/menu.jsp"/>
 
 			</div>
 		</div>
@@ -161,32 +121,19 @@
 					 </textarea>
 					</div><br>
 				</article>
-				<center><a href="intro.html" class="button">저장하기</a></center>
+				<center>
+					<a href="intro" class="button">저장하기</a>
+				</center>
 			</div>
 		</div>
 
 		<!-- Footer -->
-		<div id="footer-wrapper">
-			<section id="footer" class="container">
-				<!-- Copyright -->
-				<div id="copyright">
-					<ul class="links">
-						<li>&copy; 소프트웨어공학과. All rights reserved.</li>
-						<li><a href="http://sw.skhu.ac.kr">sw.skhu.ac.kr</a></li>
-					</ul>
-				</div>
-			</section>
-		</div>
+		<c:import url="../../common/footer.jsp"/>
 
 	</div>
 
 	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.dropotron.min.js"></script>
-	<script src="assets/js/skel.min.js"></script>
-	<script src="assets/js/skel-viewport.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
+	<c:import url="../../common/scripts.jsp"/>
 
 </body>
 

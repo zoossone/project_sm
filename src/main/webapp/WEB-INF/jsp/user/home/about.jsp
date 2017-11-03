@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <!DOCTYPE HTML>
 <html>
 
@@ -15,7 +16,7 @@ pageEncoding="UTF-8" %>
 			<div id="header">
 
 				<!-- Menu -->
-				<c:import url="../../common/user-menu.jsp" />
+				<c:import url="../../common/menu.jsp" />
 
 			</div>
 		</div>
@@ -47,9 +48,12 @@ pageEncoding="UTF-8" %>
 
 					<p>
 						<h3>설문조사 방법</h3> - 멘토 & 멘티는 멘토 사업이 끝난 후 설문조사를 한다.<br> A. 멘토 사업이 끝난 후 설문조사 기간 내에 설문조사를 한다.</p>
-
 				</article>
-
+				<sec:authorize access="hasRole('ROLE_ADMIN')">
+					<center>
+						<a href="about-change" class="button">수정하기</a>
+					</center>
+				</sec:authorize>
 			</div>
 		</div>
 

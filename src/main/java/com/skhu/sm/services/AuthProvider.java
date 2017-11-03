@@ -24,14 +24,15 @@ public class AuthProvider implements AuthenticationProvider {
     @Autowired
     AuthorizationService authorizationService;
 
+    //로그인 버튼을 누를 경우
+    //실행 1
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
-        System.out.println("auth1");
         String id = authentication.getName();
         String password = authentication.getCredentials().toString();
         return authenticate(id, password);
     }
-
+    //실행 2
     public Authentication authenticate(String id, String password) throws AuthenticationException {
         User user = authorizationService.login(id, password);
         if (user == null) return null;
