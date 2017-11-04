@@ -2,6 +2,11 @@ package com.skhu.sm.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.skhu.sm.dto.*;
+import com.skhu.sm.mapper.UserMapper;
+import com.skhu.sm.services.AuthorizationService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.ui.Model;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +17,9 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class MentoringController {
 
+    @Autowired
+    UserMapper userMapper;
+
     @GetMapping(value = "post")
     public String post(Model model, HttpServletRequest request) {
         if(request.isRequestedSessionIdValid()) {
@@ -20,28 +28,55 @@ public class MentoringController {
         return "redirect:login";
     }
 
-    @RequestMapping(value = "mymentoring", method = RequestMethod.GET)
-    public String myMentoring(Model model) {
-        return "user/work/myMentoring";
+    @Secured("ROLE_USER")
+    @GetMapping(value = "apply")
+    public String apply(Model model, HttpServletRequest request) {
+        if(request.isRequestedSessionIdValid()) {
+            //model.addAttribute("user", AuthorizationService.getCurrentUser());
+            return "user/work/mentoapply";
+    }
+        return "redirect:login";
     }
 
-    @RequestMapping(value = "report", method = RequestMethod.GET)
-    public String report(Model model) {
-        return "user/work/report";
+    @Secured("ROLE_USER")
+    @PostMapping(value = "applying")
+    public String applying(Model model, HttpServletRequest request) {
+        if(request.isRequestedSessionIdValid()) {
+            System.out.println("applying");
+        }
+        return "redirect:apply";
+        //return "redirect:login";
     }
 
-    @RequestMapping(value = "apply", method = RequestMethod.GET)
-    public String apply(Model model) {
-        return "user/work/mentoapply";
+    @GetMapping(value = "mymentoring")
+    public String myMentoring(Model model, HttpServletRequest request) {
+        if(request.isRequestedSessionIdValid()) {
+            return "user/work/myMentoring";
+        }
+        return "redirect:login";
     }
 
-    @RequestMapping(value = "mentolist", method = RequestMethod.GET)
-    public String mentoList(Model model) {
-        return "user/work/mentolist";
+    @GetMapping(value = "report")
+    public String report(Model model, HttpServletRequest request) {
+        if(request.isRequestedSessionIdValid()) {
+            return "user/work/report";
+        }
+        return "redirect:login";
     }
 
-    @RequestMapping(value = "mentoringinfo", method = RequestMethod.GET)
-    public String mentroingInfo(Model model) {
-        return "user/work/mentoringinfo";
+    @GetMapping(value = "mentolist")
+    public String mentoList(Model model, HttpServletRequest request) {
+        if(request.isRequestedSessionIdValid()) {
+            return "user/work/mentolist";
+        }
+        return "redirect:login";
+    }
+
+    @GetMapping(value = "mentoringinfo")
+    public String mentroingInfo(Model model, HttpServletRequest request) {
+        if(request.isRequestedSessionIdValid()) {
+            return "user/work/mentoringinfo";
+        }
+        return "redirect:login";
     }
 }

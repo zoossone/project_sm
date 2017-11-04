@@ -19,24 +19,6 @@
     </noscript>
 </head>
 
-<script>
-    /*function z(id) {
-            return document.getElementById(id);
-        }
-
-        function checkEqual() {
-            System.out.println(1);
-            if (z('id').value == '' || z('pw').value == '') {
-                alert('아이디 / 비밀번호가 잘못되었습니다 \n 다시 입력하세요');
-            } else {
-                location.href = "http://localhost:8090/database/home/user";
-            }
-        }*/// 아이디 패스워드 입력 안했으면 로그인 안되게 막고 싶었는데 안먹어요ㅜㅜ
-    function locationHref() {
-        location.href = "home";
-    }
-</script>
-
 <body>
 
 <!-- Wrapper -->

@@ -1,9 +1,11 @@
 package com.skhu.sm.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.ui.Model;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * Created by ds on 2017-10-26.
@@ -11,18 +13,27 @@ import org.springframework.ui.Model;
 @Controller
 public class SurveyController {
 
-    @RequestMapping(value = "survey", method = RequestMethod.GET)
-    public String survey(Model model) {
-        return "user/survey/survey";
+    @GetMapping(value = "survey")
+    public String survey(Model model, HttpServletRequest request) {
+        if(request.isRequestedSessionIdValid()) {
+            return "user/survey/survey";
+        }
+        return "redirect:login";
     }
 
-    @RequestMapping(value = "mentorsurvey", method = RequestMethod.GET)
-    public String mentorSurvey(Model model) {
-        return "user/survey/mentor-survey";
+    @GetMapping(value = "mentorsurvey")
+    public String mentorSurvey(Model model, HttpServletRequest request) {
+        if(request.isRequestedSessionIdValid()) {
+            return "user/survey/mentor-survey";
+        }
+        return "redirect:login";
     }
 
-    @RequestMapping(value = "menteesurvey", method = RequestMethod.GET)
-    public String menteeSurvey(Model model) {
-        return "user/survey/mentee-survey";
+    @GetMapping(value = "menteesurvey")
+    public String menteeSurvey(Model model, HttpServletRequest request) {
+        if(request.isRequestedSessionIdValid()) {
+            return "user/survey/mentee-survey";
+        }
+        return "redirect:login";
     }
 }
