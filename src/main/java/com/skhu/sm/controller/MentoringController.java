@@ -3,6 +3,7 @@ package com.skhu.sm.controller;
 import javax.servlet.http.HttpServletRequest;
 
 import com.skhu.sm.dto.*;
+import com.skhu.sm.mapper.ApplyMapper;
 import com.skhu.sm.mapper.UserMapper;
 import com.skhu.sm.services.AuthorizationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,9 @@ public class MentoringController {
     @Autowired
     UserMapper userMapper;
 
+    @Autowired
+    ApplyMapper applyMapper;
+
     @GetMapping(value = "post")
     public String post(Model model, HttpServletRequest request) {
         if(request.isRequestedSessionIdValid()) {
@@ -32,7 +36,7 @@ public class MentoringController {
     @GetMapping(value = "apply")
     public String apply(Model model, HttpServletRequest request) {
         if(request.isRequestedSessionIdValid()) {
-            Apply user = new Apply();
+            model.addAttribute("apply", new Apply());
             model.addAttribute("user", AuthorizationService.getCurrentUser());
             return "user/work/mentoapply";
         }
@@ -41,9 +45,11 @@ public class MentoringController {
 
     @Secured("ROLE_USER")
     @PostMapping(value = "apply")
-    public String applying(Model model, HttpServletRequest request) {
+    public String applying(Model model, HttpServletRequest request, Apply apply) {
         if(request.isRequestedSessionIdValid()) {
-            System.out.println("applying");
+            apply.setID(AuthorizationService.getCurrentUser().getID());
+            System.out.println(apply.toString());
+            applyMapper.insert(apply);
         }
         return "redirect:apply";
         //return "redirect:login";

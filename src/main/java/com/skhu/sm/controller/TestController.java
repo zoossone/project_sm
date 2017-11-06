@@ -21,8 +21,8 @@ public class TestController {
         return "redirect:login";
     }*/
 
-
-    /*@PostMapping(value = {"", "/login"})
+    /*
+    @PostMapping(value = {"", "/login"})
     public String login(Model model, @RequestParam("id") String u_id, @RequestParam("password") String u_password) {
         *//*System.out.println("u_id : " + u_id + " u_password : " + u_password);
         if(u_id.isEmpty() || u_password.isEmpty()) {
@@ -39,5 +39,6 @@ public class TestController {
         }*//*
         System.out.println("login post");
         return "login";
-    }*/
+    }
+    */
 }

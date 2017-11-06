@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.skhu.sm.mapper.ApplyMapper">
+    <cache flushInterval="10000"/>
+
+    <select id="findOne" resultType="Apply">
+        SELECT * FROM APPLY WHERE a_id =
+        #{a_id}
+    </select>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="a_id">
+        INSERT
+        APPLY (a_title, a_sub, ID, a_name, a_aim, a_contents, a_method, a_hours, a_rank, a_num)
+        VALUES
+        (#{a_title}, #{a_sub}, #{ID}, #{a_name}, #{a_aim}, #{a_contents}, #{a_method}, #{a_hours}, #{a_rank}, #{a_num})
+    </insert>
+
+</mapper>

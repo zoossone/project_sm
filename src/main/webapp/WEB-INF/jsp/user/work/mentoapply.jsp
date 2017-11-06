@@ -33,26 +33,29 @@ pageEncoding="UTF-8" %>
 					</header>
 					<article id="mento">
 
-						<form method="post">
+						<form:form method="post" modelAttribute="apply">
 							<div class="row">
 
 								<div class="col-xs-6" style="left: auto">
-									<label for="demo-subject">스터디 주제</label>
-										<select name="department">
-											<option value="주제 선택" selected(초기 선택된 항목)>주제 선택</option>
-											<option value="프로그래밍">프로그래밍</option>
-											<option value="(컴퓨터)언어">(컴퓨터)언어</option>
-											<option value="(인문)언어">(인문)언어</option>
-											<option value="교양 시사">교양 시사</option>
-											<option value="수학">수학</option>
-											<option value="예체능">예체능</option>
-											<option value="봉사">봉사</option>
-										</select>
+									<label for="a_title">스터디 주제</label>
+										<form:select path="a_title" id="a_title">
+											<form:option value="프로그래밍" selected="selected"/>
+											<form:option value="컴퓨터 언어"/>
+											<form:option value="인문학"/>
+											<form:option value="어학"/>
+											<form:option value="교양"/>
+											<form:option value="시사"/>
+											<form:option value="공학"/>
+											<form:option value="수학"/>
+											<form:option value="과학"/>
+											<form:option value="예체능"/>
+											<form:option value="봉사"/>
+										</form:select>
 								</div>
 
 								<div class="col-xs-6">
-									<label for="subject-details">상세 주제</label>
-									<input type="text" name="a_sub" id="a_sub" placeholder="상세 주제">
+									<label for="a_sub">상세 주제</label>
+									<form:input path="a_sub" id="a_sub"/>
 								</div>
 
 							</div>
@@ -87,53 +90,65 @@ pageEncoding="UTF-8" %>
 							<br/>
 
 							<div class="field">
-								<label for="apply.a_name">조 이름</label>
-								<input type="text" name="apply.a_name" id="apply.a_name"/>
+								<label for="a_name">조 이름</label>
+								<form:input path="a_name" id="a_name"/>
 							</div>
 
 							<br/>
 
 							<div class="field">
-								<label for="message">스터디 목적</label>
-								<textarea name="message" id="message" rows="6"></textarea>
+								<label for="a_aim">스터디 목적</label>
+								<form:textarea path="a_aim" id="a_aim"/>
 							</div>
 
 							<br/>
 
 							<div class="field">
-								<label for="content">스터디 내용(예상 결과물 포함)</label>
-								<textarea name="content" id="content" rows="6"></textarea>
+								<label for="a_contents">스터디 내용(예상 결과물 포함)</label>
+								<form:textarea path="a_contents" id="a_contents"/>
 							</div>
 
 							<br/>
 
 							<div class="field">
-								<label for="method">스터디 방법</label>
-								<textarea name="method" id="method" rows="4"></textarea>
+								<label for="a_method">스터디 방법</label>
+								<form:textarea path="a_method" id="a_method"/>
 							</div>
 
 							<br/>
 							<div class="row">
 								<div class="col-xs-6" style="left: auto">
-									<label for="time">가능한 시간대 (한주에 2시간 필수)</label>
-									<input type="text" name="time" id="time"/>
+									<label for="a_hours">가능한 시간대 (한주에 2시간 필수)</label>
+									<form:input path="a_hours" id="a_hours"/>
 								</div>
+
 								<div class="col-xs-6">
-									<label for="demo-people">인원 수</label>
-									<select name="member">
-										<option value="6명" selected(초기 선택된 항목)>6명</option>
-										<option value="5명">5명</option>
-										<option value="4명">4명</option>
-										<option value="3명">3명</option>
-									</select></div></div><br/>
-							<div class="field">
-								<label for="gread">해당과목 성적</label>
-								<input type="text" name="gread" id="gread"/>
-							</div><br/>
-							<div class="field">
-								<label for="gread">포트폴리오 제출</label>
-								<input type="file" fileread="text.file">
+									<label for="a_num">인원 수</label>
+									<form:select path="a_num" id="a_num">
+										<form:option value="6" label="6명" selected="selected"/>
+										<form:option value="5" label="5명"/>
+										<form:option value="4" label="4명"/>
+										<form:option value="3" label="3명"/>
+										<form:option value="2" label="2명"/>
+										<form:option value="1" label="1명"/>
+									</form:select>
+								</div>
 							</div>
+
+							<br/>
+
+							<div class="field">
+								<label for="a_rank">해당과목 성적</label>
+								<form:input path="a_rank" id="a_rank"/>
+							</div>
+
+							<br/>
+
+							<div class="field">
+								<label for="a_file">포트폴리오 제출</label>
+								<input type="file" id="a_file" name="a_file">
+							</div>
+							
 							<br />
 
 							<div class="field">
@@ -141,7 +156,7 @@ pageEncoding="UTF-8" %>
 									<button type="submit" class="btn btn-light">신청</button>
 								</center>
 							</div>
-						</form>
+						</form:form>
 
 					</article>
 					<section>
