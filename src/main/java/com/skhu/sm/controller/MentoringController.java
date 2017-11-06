@@ -32,14 +32,15 @@ public class MentoringController {
     @GetMapping(value = "apply")
     public String apply(Model model, HttpServletRequest request) {
         if(request.isRequestedSessionIdValid()) {
-            //model.addAttribute("user", AuthorizationService.getCurrentUser());
+            Apply user = new Apply();
+            model.addAttribute("user", AuthorizationService.getCurrentUser());
             return "user/work/mentoapply";
-    }
+        }
         return "redirect:login";
     }
 
     @Secured("ROLE_USER")
-    @PostMapping(value = "applying")
+    @PostMapping(value = "apply")
     public String applying(Model model, HttpServletRequest request) {
         if(request.isRequestedSessionIdValid()) {
             System.out.println("applying");

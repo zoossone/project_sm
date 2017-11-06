@@ -109,12 +109,12 @@
 
                             <br/><br/>
                             <div class="field">
-                                <label>이름 : </label>
+                                <label>이름 : ${user.u_name}</label>
                             </div>
                             <br/>
 
                             <div class="field">
-                                <label>아이디 : </label>
+                                <label>학번 : ${user.u_id}</label>
                             </div>
                             <br/>
 
@@ -222,13 +222,13 @@
 
                             <div class="field">
                                 <label for="email">e-mail</label>
-                                <input type="email" name="email" id="email" placeholder="e-mail"/>
+                                <input type="email" name="email" id="email" placeholder="e-mail" value="${user.u_email}"/>
                             </div>
                             <br/>
 
                             <div class="field">
                                 <label for="tel">전화번호</label>
-                                <input type="text" name="tel" id="tel" placeholder="tel"/>
+                                <input type="text" name="tel" id="tel" placeholder="tel" value="${user.u_tel}"/>
                             </div>
                             <br/>
 

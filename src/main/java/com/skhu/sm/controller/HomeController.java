@@ -2,6 +2,7 @@ package com.skhu.sm.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.skhu.sm.services.AuthorizationService;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -80,6 +81,7 @@ public class HomeController {
     @GetMapping(value = "mypage")
     public String myPage(Model model, HttpServletRequest request) {
         if(request.isRequestedSessionIdValid()) {
+            model.addAttribute("user", AuthorizationService.getCurrentUser());
             return "user/myPage/mypage";
         }
         return "redirect:login";

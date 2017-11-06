@@ -33,7 +33,7 @@ pageEncoding="UTF-8" %>
 					</header>
 					<article id="mento">
 
-							<form:form method="post" modelAttribute="user" action="/applying">
+						<form method="post">
 							<div class="row">
 
 								<div class="col-xs-6" style="left: auto">
@@ -52,43 +52,43 @@ pageEncoding="UTF-8" %>
 
 								<div class="col-xs-6">
 									<label for="subject-details">상세 주제</label>
-									<form:input path="a_sub" type="text" placeholder="상세 주제"/>
+									<input type="text" name="a_sub" id="a_sub" placeholder="상세 주제">
 								</div>
 
 							</div>
 							<br/>
 
 							<div class="field half first">
-								<label for="demo-name">이름</label>
-								<input type="text" name="demo-name" id="demo-name"/>
+								<label for="name">이름</label>
+								<input type="text" name="name" id="name" value="${user.u_name}"/>
 							</div>
 
 							<br/>
 
 							<div class="field half">
-								<label for="year">학년</label>
-								<input type="text" name="year" id="year"/>
+								<label for="grade">학년</label>
+								<input type="text" name="grade" id="grade" value="${user.u_grade}"/>
 							</div>
 
 							<br/>
 
 							<div class="field half first">
-								<label for="demo-no">학번</label>
-								<input type="text" name="demo-no" id="demo-no"/>
+								<label for="u_id">학번</label>
+								<input type="text" name="u_id" id="u_id" value = "${user.u_id}"/>
 							</div>
 
 							<br/>
 
 							<div class="field half">
-								<label for="demo-address">연락처</label>
-								<input type="text" name="demo-address" id="demo-address"/>
+								<label for="address">연락처</label>
+								<input type="text" name="address" id="address" value = "${user.u_tel}"/>
 							</div>
 
 							<br/>
 
 							<div class="field">
-								<label for="demo-sname">조 이름</label>
-								<input type="text" name="demo-sname" id="demo-sname"/>
+								<label for="apply.a_name">조 이름</label>
+								<input type="text" name="apply.a_name" id="apply.a_name"/>
 							</div>
 
 							<br/>
@@ -141,7 +141,7 @@ pageEncoding="UTF-8" %>
 									<button type="submit" class="btn btn-light">신청</button>
 								</center>
 							</div>
-							</form:form>
+						</form>
 
 					</article>
 					<section>
